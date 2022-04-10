@@ -2,15 +2,15 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-import About from "./components/About";
+// import About from "./components/About";
 import Alert from "./components/Alert";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Switch ,
-  Route,
-   Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Switch ,
+//   Route,
+//    Link
+// } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("light");
@@ -120,7 +120,7 @@ function App() {
   };
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar
           title="TextUtils"
           home="Home"
@@ -135,22 +135,19 @@ function App() {
         />
         <Alert alert={alert} />
         <div className="container my-4">
-          <Switch>
-            <Route exact path="/about">
-              <About  mode={mode} />
-            </Route>
-
-            <Route exact path="/">
-              <TextForm
+        <TextForm
                 setAlert={setAlert}
                 successMode={successMode}
                 mode={mode}
                 h1="Try TextUtils - Word Counter, Character Counter, Remove extra spaces"
               />
-            </Route>
-          </Switch>
+          {/* <Switch> */}
+            {/* <Route exact path="/about"> */}
+              {/* <About  mode={mode} /> */}
+            {/* </Route> */}
+          {/* </Switch> */}
         </div>
-      </Router>
+      {/* </Router> */}
   
     </>
   );
